@@ -1,0 +1,6 @@
+a3em-analysis
+pandas
+matplotlib
+scipy
+statsmodels
+scikit-learn
