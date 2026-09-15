@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 from dotenv import load_dotenv
 from a3em_analysis.datasets import Arden
 
@@ -23,5 +24,6 @@ rumble_features = rumble_identifiers.join(features)
 rumble_features.to_csv('arden_features.csv')
 
 # export summary csv
-summary = features.describe()
+summary_df = pd.DataFrame(dataset.metadata['duration']).join(features)
+summary = summary_df.describe()
 summary.to_csv('arden_summary.csv')
